@@ -18,6 +18,7 @@ Requires:	php-pear
 BuildArch:	noarch
 BuildRequires:	dos2unix
 BuildRequires:	recode
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Allows for the building of XML data structures using a tree
