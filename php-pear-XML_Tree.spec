@@ -7,7 +7,7 @@
 Summary:	%{_pearname} - represent XML data in a tree structure
 Name:		php-pear-%{_pearname}
 Version:	2.0.0
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_rc}.tar.bz2
@@ -18,7 +18,7 @@ Requires:	php-pear
 BuildArch:	noarch
 BuildRequires:	dos2unix
 BuildRequires:	recode
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Allows for the building of XML data structures using a tree
