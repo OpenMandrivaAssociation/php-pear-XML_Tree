@@ -7,7 +7,7 @@
 Summary:	%{_pearname} - represent XML data in a tree structure
 Name:		php-pear-%{_pearname}
 Version:	2.0.0
-Release:	%mkrel 10
+Release:	%mkrel 11
 License:	PHP License
 Group:		Development/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}%{_rc}.tar.bz2
