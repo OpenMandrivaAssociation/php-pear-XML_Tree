@@ -6,7 +6,7 @@
 Name:		php-pear-%{upstream_name}
 Version:	2.0.0
 Summary:	Represent XML data in a tree structure
-Release:	%mkrel 13
+Release:	%mkrel 14
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/XML_Tree/
