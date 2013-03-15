@@ -6,7 +6,7 @@
 Name:		php-pear-%{upstream_name}
 Version:	2.0.0
 Summary:	Represent XML data in a tree structure
-Release:	%mkrel 15
+Release:	16
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/XML_Tree/
@@ -16,7 +16,6 @@ Requires(preun): php-pear
 Requires:	php-pear
 BuildArch:	noarch
 BuildRequires:	php-pear
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Allows for the building of XML data structures using a tree
@@ -28,7 +27,6 @@ representation, without the need for an extension like DOMXML.
 mv package.xml %{upstream_name}-%{version}%{_rc}/%{upstream_name}.xml
 
 %install
-rm -rf %{buildroot}
 
 cd %{upstream_name}-%{version}%{_rc}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
@@ -42,21 +40,8 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %clean
-rm -rf %{buildroot}
 
-%post
-%if %mdkversion < 201000
-pear install --nodeps --soft --force --register-only \
-    %{_datadir}/pear/packages/%{upstream_name}.xml >/dev/null || :
-%endif
 
-%preun
-%if %mdkversion < 201000
-if [ "$1" -eq "0" ]; then
-    pear uninstall --nodeps --ignore-errors --register-only \
-        %{upstream_name} >/dev/null || :
-fi
-%endif
 
 %files
 %defattr(-,root,root)
